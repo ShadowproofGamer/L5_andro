@@ -144,7 +144,7 @@ class AddFragment : Fragment() {
                     "addNewItem", bundleOf(
                         "name" to name,
                         "spec" to spec,
-                        "strength" to addStrength.rating,
+                        "strength" to addStrength.rating*2,
                         "danger" to addDanger.isChecked,
                         "type" to race,
                         "toAdd" to true,
