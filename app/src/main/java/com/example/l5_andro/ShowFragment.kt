@@ -153,6 +153,23 @@ class ShowFragment : Fragment() {
 
     }
 
+    override fun onPause() {
+        super.onPause()
+        //item modifications
+        parentFragmentManager.setFragmentResult(
+            "mainmodmsg", bundleOf(
+                "toChange" to changed,
+                "name" to showName.text.toString(),
+                "spec" to showSpec.text.toString(),
+                "strength" to showStrength.progress.toFloat(),
+                "danger" to showDanger.isChecked,
+                "type" to tempType,
+                "id" to itemId,
+                "humanoids" to arrayOf("Human", "NPC", "Orc")
+            )
+        )
+    }
+
     companion object {
 
         @JvmStatic
