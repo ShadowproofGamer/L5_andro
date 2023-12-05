@@ -16,7 +16,7 @@
     <string name="op1">Option 1</string>
     <string name="op2">Option 2</string>
     <string name="results">Here data/results</string>
-    <string name="fragmentMain">Fragment to start on</string>
+    <string name="fragmentMain">Welcome to tha app!</string>
     <string name="fragmentSwipe">Fragment with tabs</string>
     <string name="fragmentList">Fragment with list</string>
     <string name="fragmentTab1">Fragment with tab2</string>

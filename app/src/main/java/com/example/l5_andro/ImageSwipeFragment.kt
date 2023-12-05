@@ -35,12 +35,7 @@ class ImageSwipeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val viewPager = _binding.viewPager2
-
         viewPager.adapter = _adapter
-
-        //val tabIcons = arrayOf(R.drawable.preferences_1_icon, R.drawable.preferences_2_icon)
-
-
 
         _binding.imageSaveButton.setOnClickListener { _ ->
             val item = viewPager.currentItem

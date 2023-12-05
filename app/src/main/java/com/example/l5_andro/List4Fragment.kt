@@ -92,7 +92,8 @@ class List4Fragment : Fragment() {
                     val itemDanger = bundle.getBoolean("danger", false)
                     val itemType = bundle.getString("type", "Human")
                     val id = bundle.getInt("id", 0)
-                    val updateItem = DBItem(id, itemName, itemSpec, itemStrength, itemType, itemDanger)
+                    val updateItem =
+                        DBItem(id, itemName, itemSpec, itemStrength, itemType, itemDanger)
                     adapter.updateItem(updateItem)
                 }
             }
@@ -116,6 +117,9 @@ class List4Fragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+
+
 
 
     inner class MyAdapter(var data: MutableList<DBItem>) :
@@ -146,7 +150,7 @@ class List4Fragment : Fragment() {
             return true
         }
 
-        fun updateItem(item: DBItem): Boolean{
+        fun updateItem(item: DBItem): Boolean {
             if (dataRepo.modifyItem(item))
                 notifyDataSetChanged()
             requireActivity().recreate()
@@ -162,7 +166,7 @@ class List4Fragment : Fragment() {
             } else {
                 currData.text_spec
             }
-            holder.itemView.setOnClickListener {_->
+            holder.itemView.setOnClickListener { _ ->
                 parentFragmentManager.setFragmentResult(
                     "msgtochild", bundleOf(
                         "name" to currData.text_name,

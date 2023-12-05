@@ -102,7 +102,7 @@ class AddFragment : Fragment() {
                 "addmodmsg", bundleOf(
                     "name" to addName.text.toString(),
                     "spec" to addSpec.text.toString(),
-                    "strength" to addStrength.rating*2,
+                    "strength" to addStrength.rating * 2,
                     "danger" to addDanger.isChecked,
                     "type" to race,
                     "toAdd" to false,
@@ -144,7 +144,7 @@ class AddFragment : Fragment() {
                     "addNewItem", bundleOf(
                         "name" to name,
                         "spec" to spec,
-                        "strength" to addStrength.rating*2,
+                        "strength" to addStrength.rating * 2,
                         "danger" to addDanger.isChecked,
                         "type" to race,
                         "toAdd" to true,
@@ -155,9 +155,7 @@ class AddFragment : Fragment() {
             requireActivity().onBackPressed()
         }
 
-
     }
-
 
 
     companion object {
