@@ -1,11 +1,10 @@
-package com.example.l6_andro.lab6
+package com.example.l6_andro
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.l6_andro.R
 import com.bumptech.glide.Glide
 
 class ImageSliderAdapter (private val photos: MutableList<ImageItem>) : RecyclerView.Adapter<ImageSliderAdapter.ViewHolder>() {

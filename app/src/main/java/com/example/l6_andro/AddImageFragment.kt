@@ -1,4 +1,4 @@
-package com.example.l6_andro.lab6
+package com.example.l6_andro
 
 import android.content.ActivityNotFoundException
 import android.graphics.Bitmap
@@ -13,7 +13,6 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.result.launch
 import androidx.core.content.FileProvider
-import com.example.l6_andro.BuildConfig
 import com.example.l6_andro.databinding.FragmentAddImageBinding
 import java.io.File
 import java.io.FileInputStream
@@ -35,7 +34,7 @@ class AddImageFragment : Fragment() {
                 result: Bitmap? ->
             if (result != null) {
                 Toast.makeText(requireContext(),"PREVIEW RECEIVED", Toast.LENGTH_LONG).show()
-                _binding.imageView.setImageBitmap(result)
+                _binding.imageViewA.setImageBitmap(result)
             }
             else {
                 Toast.makeText(requireContext(),"PREVIEW NOT RECEIVED", Toast.LENGTH_LONG).show()
@@ -88,7 +87,7 @@ class AddImageFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentAddImageBinding.inflate(inflater, container, false)
         _binding.previewButton.setOnClickListener {
             try {

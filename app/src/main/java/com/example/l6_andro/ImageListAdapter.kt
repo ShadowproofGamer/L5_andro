@@ -1,4 +1,4 @@
-package com.example.l6_andro.lab6
+package com.example.l6_andro
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -10,16 +10,20 @@ import android.util.Size
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.l6_andro.R
 import com.example.l6_andro.databinding.ImageItemBinding
 import java.io.FileNotFoundException
 import java.io.InputStream
 
-class ImageListAdapter(private var appContext: Context) : ListAdapter<ImageItem, ImageListAdapter.MyViewHolder>(PhotoDiffCallback())  {
+
+class ImageListAdapter(private var appContext: Context) : ListAdapter<ImageItem, ImageListAdapter.MyViewHolder>(
+    ImageDiffCallback()
+)  {
+
+
     inner class MyViewHolder(viewBinding: ImageItemBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
         val img: ImageView = viewBinding.itemImg
@@ -42,7 +46,7 @@ class ImageListAdapter(private var appContext: Context) : ListAdapter<ImageItem,
         }
 
         holder.img.setOnClickListener{
-            Navigation.findNavController(holder.itemView)
+            findNavController(holder.itemView)
                 .navigate(R.id.action_imageListFragment_to_imageSliderFragment, Bundle().apply {
                 putString("path", image.uripath)
             })
@@ -68,7 +72,7 @@ class ImageListAdapter(private var appContext: Context) : ListAdapter<ImageItem,
         return bitmap
     }
 
-    private class PhotoDiffCallback : DiffUtil.ItemCallback<ImageItem>() {
+    private class ImageDiffCallback : DiffUtil.ItemCallback<ImageItem>() {
         override fun areItemsTheSame(oldItem: ImageItem, newItem: ImageItem): Boolean {
             return oldItem.path == newItem.path
         }

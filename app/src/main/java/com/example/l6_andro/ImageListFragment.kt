@@ -1,4 +1,4 @@
-package com.example.l6_andro.lab6
+package com.example.l6_andro
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,32 +11,34 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.l6_andro.R
 import com.example.l6_andro.databinding.FragmentImageListBinding
 
 class ImageListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ImageListAdapter
-    private lateinit var _binding: FragmentImageListBinding
+    private var _binding: FragmentImageListBinding? = null
     private lateinit var imageRepo: ImageRepo
+    private var isSharedMemory = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        imageRepo=ImageRepo.getInstance(requireContext())
+        arguments?.let {
+            isSharedMemory = it.getBoolean("isSharedMemory")
+        }
+        imageRepo= ImageRepo.getInstance(requireContext())
         adapter= ImageListAdapter(requireContext())
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentImageListBinding.inflate(inflater, container, false)
-        recyclerView = _binding.listView
+        recyclerView = _binding!!.listView
         recyclerView.layoutManager = androidx.recyclerview.widget.GridLayoutManager(requireContext(), 2)
 
         recyclerView.adapter = adapter
-        return _binding.root
+        return _binding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -68,14 +70,4 @@ class ImageListFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    companion object {
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ImageListFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
-    }
 }

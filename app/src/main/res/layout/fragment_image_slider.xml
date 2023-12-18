@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lab6.ImageSliderFragment">
+    tools:context=".ImageSliderFragment">
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+        android:id="@+id/viewPagerN"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

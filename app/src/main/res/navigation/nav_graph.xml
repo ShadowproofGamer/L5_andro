@@ -84,12 +84,12 @@
         app:popUpTo="@id/main_frag" />
     <fragment
         android:id="@+id/imageSliderFragment"
-        android:name="com.example.l6_andro.lab6.ImageSliderFragment"
+        android:name="com.example.l6_andro.ImageSliderFragment"
         android:label="fragment_image_slider"
         tools:layout="@layout/fragment_image_slider" />
     <fragment
         android:id="@+id/imageListFragment"
-        android:name="com.example.l6_andro.lab6.ImageListFragment"
+        android:name="com.example.l6_andro.ImageListFragment"
         android:label="fragment_image_list"
         tools:layout="@layout/fragment_image_list">
         <action
@@ -98,7 +98,7 @@
     </fragment>
     <fragment
         android:id="@+id/addImageFragment"
-        android:name="com.example.l6_andro.lab6.AddImageFragment"
+        android:name="com.example.l6_andro.AddImageFragment"
         android:label="AddImageFragment" />
     <action
         android:id="@+id/action_global_imageListFragment"

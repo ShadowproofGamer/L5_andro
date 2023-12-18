@@ -1,4 +1,4 @@
-package com.example.l6_andro.lab6
+package com.example.l6_andro
 
 import android.net.Uri
 
