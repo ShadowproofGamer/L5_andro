@@ -20,7 +20,7 @@
         android:id="@+id/show_frag"
         android:name="com.example.l5_andro.ShowFragment"
         android:label="Element data"
-        tools:layout="@layout/fragment_show" >
+        tools:layout="@layout/fragment_show">
         <action
             android:id="@+id/action_show_frag_to_add_frag"
             app:destination="@id/add_frag" />
@@ -51,10 +51,10 @@
         android:label="fragment_2"
         tools:layout="@layout/fragment_2" />
     <fragment
-        android:id="@+id/list_frag"
+        android:id="@+id/list4Fragment"
         android:name="com.example.l5_andro.List4Fragment"
         android:label="fragment_list4"
-        tools:layout="@layout/fragment_list4" >
+        tools:layout="@layout/fragment_list4">
         <action
             android:id="@+id/action_list_frag_to_show_frag"
             app:destination="@id/show_frag" />
@@ -64,7 +64,7 @@
     </fragment>
     <action
         android:id="@+id/action_global_list4Fragment"
-        app:destination="@id/list_frag"
+        app:destination="@id/list5Fragment"
         app:launchSingleTop="true"
         app:popUpTo="@id/main_frag" />
     <fragment
@@ -80,6 +80,23 @@
     <action
         android:id="@+id/action_global_imageSwipeFragment"
         app:destination="@id/image_swipe_frag"
+        app:launchSingleTop="true"
+        app:popUpTo="@id/main_frag" />
+    <fragment
+        android:id="@+id/list5Fragment"
+        android:name="com.example.l5_andro.List5Fragment"
+        android:label="fragment_list5"
+        tools:layout="@layout/fragment_list5" >
+        <action
+            android:id="@+id/action_list5Fragment_to_show_frag"
+            app:destination="@id/show_frag" />
+        <action
+            android:id="@+id/action_list5Fragment_to_add_frag"
+            app:destination="@id/add_frag" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_list5Fragment"
+        app:destination="@id/list5Fragment"
         app:launchSingleTop="true"
         app:popUpTo="@id/main_frag" />
 </navigation>

@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
 
         appBarConfig =
-            AppBarConfiguration(setOf(R.id.image_swipe_frag,R.id.main_frag,R.id.list_frag), drawerLayout)
+            AppBarConfiguration(setOf(R.id.image_swipe_frag,R.id.main_frag,R.id.list5Fragment), drawerLayout)
         // old config:
         // AppBarConfiguration(setOf(R.id.swipe_frag,R.id.main_frag,R.id.list_frag), drawerLayout)
         setupActionBarWithNavController(navController,appBarConfig)

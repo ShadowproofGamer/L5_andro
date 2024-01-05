@@ -1,6 +1,7 @@
 package com.example.l5_andro
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 
 class MyRepository(context: Context) {
     private var dataList: MutableList<DBItem>? = null
@@ -25,6 +26,9 @@ class MyRepository(context: Context) {
     fun getData(): MutableList<DBItem>? {
         dataList = myDao.getAllData()
         return dataList
+    }
+    fun getData2(): LiveData<List<DBItem>>?{
+        return myDao.getAllData2();
     }
     fun addItem(item: DBItem) : Boolean {
         return myDao.insert(item) >= 0

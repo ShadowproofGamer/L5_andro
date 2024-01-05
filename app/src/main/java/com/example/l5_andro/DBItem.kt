@@ -24,6 +24,10 @@ class DBItem {
     var item_type : String = humanoids[Random.nextInt(0, 3)]
     var dangerous : Boolean = Random.nextBoolean()
 
+    override fun equals(other: Any?): Boolean {
+        return super.equals(other)
+    }
+
 
     constructor()
 
